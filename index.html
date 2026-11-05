@@ -1,84 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRACE HUB - EU DPP & USA Ready </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRACE HUB - EU DPP & USA Ready | Secure</title>
+<script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Inter,sans-serif}
-body{background:#f8fafc;color:#0f172a}
-header{background:#fff;padding:16px 6%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.06);position:sticky;top:0;z-index:10}
-.logo{font-weight:800;font-size:22px;background:linear-gradient(90deg,#2563eb,#7c3aed,#db2777,#f59e0b);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero{background:linear-gradient(135deg,#dbeafe,#e0e7ff,#f3e8ff,#fce7f3,#ffedd5);padding:60px 6%;text-align:center}
-.hero h1{font-size:44px;font-weight:800;line-height:1.1;max-width:800px;margin:0 auto 12px}
-.hero h1 span{background:linear-gradient(90deg,#2563eb,#7c3aed,#db2777);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:#475569;max-width:680px;margin:0 auto 20px;font-size:15px}
-.btn{padding:12px 22px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block;margin:4px;border:none;cursor:pointer}
-.btn-o{background:#f97316;color:#fff}.btn-s{background:#fff;border:1px solid #cbd5e1;color:#334155}
-.qr-grid{max-width:1150px;margin:30px auto;display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:0 6%}
-.box{background:#fff;border-radius:16px;padding:22px;box-shadow:0 6px 24px rgba(0,0,0,.06);border:1px solid #e2e8f0}
-.box input{width:100%;padding:13px;border:2px solid #e2e8f0;border-radius:10px;margin:10px 0}
-.qr-wrap{height:220px;display:flex;justify-content:center;align-items:center;background:#f8fafc;border-radius:12px;border:2px dashed #cbd5e1}
-.cards{max-width:1150px;margin:20px auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;padding:0 6%}
-.card{padding:20px;border-radius:16px;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,.12)}
-.c1{background:linear-gradient(135deg,#3b82f6,#60a5fa)} .c2{background:linear-gradient(135deg,#10b981,#34d399)} .c3{background:linear-gradient(135deg,#8b5cf6,#a78bfa)} .c4{background:linear-gradient(135deg,#f59e0b,#fb923c)}
-.table-wrap{max-width:1150px;margin:30px auto;padding:0 6%}
-table{width:100%;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 24px rgba(0,0,0,.06);border-collapse:collapse;font-size:14px}
-th{background:#f1f5f9;padding:12px;text-align:left} td{padding:12px;border-top:1px solid #f1f5f9}
-.st{padding:4px 10px;border-radius:999px;font-size:11px;font-weight:700;display:inline-block}.pass{background:#dcfce7;color:#166534}.fail{background:#fee2e2;color:#991b1b}.pend{background:#fef9c3;color:#854d0e}
-footer{background:linear-gradient(90deg,#1e1b4b,#312e81,#4c1d95);color:#fff;padding:30px 6%;text-align:center}
-footer a{color:#93c5fd;text-decoration:none;font-weight:700}
-.wa-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 6px 20px rgba(0,0,0,.3);text-decoration:none;z-index:9999;animation:pulse 2s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.7)}70%{box-shadow:0 0 0 15px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
-@media(max-width:800px){.qr-grid{grid-template-columns:1fr}.hero h1{font-size:30px}}
-</style>
 </head>
-<body>
-<header><div class="logo"> TRACE HUB</div><div style="font-size:12px;font-weight:700;color:#64748b">EU DPP • USA • RMG • Contact</div></header>
-
-<section class="hero">
-<div style="display:inline-block;background:#fff;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;color:#2563eb;box-shadow:0 2px 8px rgba(0,0,0,.08)">● Updated 24 Oct 2026 | EU DPP + USA CBP Compliant</div>
-<h1>EU DPP & Factory Inspection <span>Traceability</span></h1>
-<p>Real-time QR traceability, EU Digital Product Passport 2026 + USA UFLPA & CBP compliance for Bangladesh RMG factories. Built by TRACE Hub.</p>
-<a class="btn btn-o" href="#qr">Generate QR Code</a>
-<a class="btn btn-s" href="https://wa.me/8801798525025" target="_blank">Chat on WhatsApp</a>
-</section>
-
-<div class="qr-grid" id="qr">
-<div class="box">
-<h3>QR Code Generator</h3>
-<input id="pid" value="BD-RMG-2026-001" placeholder="Enter Product ID" oninput="makeQR()">
-<div class="qr-wrap" id="qrcode"></div>
-<p style="font-size:12px;color:#64748b;margin-top:8px;text-align:center">Type Product ID & get instant EU/USA verifiable QR</p>
+<body class="bg-[#0a0a0a] text-white">
+<header class="p-5 flex justify-between items-center bg-black border-b border-zinc-800">
+<h1 class="font-black">🛡️ TRACE HUB - EU DPP READY</h1>
+<span class="text-xs bg-green-500 text-black px-3 py-1 rounded-full font-bold">SECURE</span>
+</header>
+<div class="p-10 text-center">
+<h1 class="text-5xl font-black">EU & USA Buyer Ready Platform</h1>
+<p class="text-zinc-400 mt-4">Bangladesh RMG Factory | Encrypted | Blockchain Verified</p>
+<div id="qrcode" class="bg-white p-4 inline-block mt-8 rounded"></div>
 </div>
-<div class="box">
-<h3>Scanner Preview • Live Product Passport</h3>
-<div style="display:grid;grid-template-columns:110px 1fr;gap:12px;margin-top:12px">
-<div style="background:linear-gradient(135deg,#e0e7ff,#fce7f3);border-radius:12px;height:110px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#334155;text-align:center">📷<br>Scanner<br>Verified</div>
-<div style="font-size:13px;line-height:1.8;background:#f8fafc;padding:12px;border-radius:10px">
-<b>Product ID:</b> <span id="pidTxt">BD-RMG-2026-001</span><br>
-<b>Factory:</b> Apex Apparel Verified, Dhaka<br>
-<b>Buyer:</b> EU (Germany) & USA<br>
-<span class="st pass">Inspection: Passed</span> <span class="st" style="background:#dbeafe;color:#1e40af">EU DPP Ready</span> <span class="st" style="background:#fef3c7;color:#92400e">USA CBP OK</span><br>
-<b>Updated:</b> 24 Oct 2026
-</div>
-</div>
-</div>
-</div>
-
-<div class="cards">
-<div class="card c1"><h3>🇪🇺 EU DPP 2026</h3><p style="font-size:13px;margin-top:4px">ESPR Mandatory • QR Digital ID • 12 Verified</p></div>
-<div class="card c2"><h3>🟢 Inspection Audit</h3><p style="font-size:13px;margin-top:4px">AQL • Inline • Final • 24 Passed</p></div>
-<div class="card c3"><h3>🔗 Supply Chain</h3><p style="font-size:13px;margin-top:4px">Cotton Origin • Transparency • 18 Active</p></div>
-<div class="card c4"><h3>🇺🇸 USA Market</h3><p style="font-size:13px;margin-top:4px">UFLPA • Forced Labor Proof • 9 On Track</p></div>
-</div>
-
-<div class="table-wrap">
-<h3 style="text-align:center;margin-bottom:12px">Recent Inspection Reports</h3>
-<table>
-<tr><th>Report ID</th><th>Product ID</th><th>Factory</th><th>Date</th><th>Status</th></tr>
-<tr><td>INV-1023</td><td>BD-RMG-2026-001</td><td>Apex Apparel Ltd</td><td>24 Oct 2026</td><td><span class="st pass">Passed</span></td></tr>
-<tr><td>INV-1024</td><td>BD-RMG-2026-002</td><td>Ocean Garments</td><td>23 Oct 2026</td><td><span class="st fail">Failed</span></td></tr>
-<tr><td>INV-1025</td><td>BD-RMG-2026-003</td><td>Delta Textiles</td><td>23 Oct 2026</td><td><span class="st pend">Pending</span></td></tr>
-<tr><td>INV-1026</td><td>BD-RMG-2026-004</td><td>Nova Knitwear</td><td>…
+<script>
+new QRCode(document.getElementById("qrcode"),{text:"TRACE HUB SECURE - tracehub-org.github.io/trace-hub",width:150,height:150});
+</script>
+</body>
+</html>
