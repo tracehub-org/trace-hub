@@ -12,6 +12,6 @@ TRACE Hub connects Bangladeshi RMG factories directly with EU & USA buyers. We p
 ## Market Focus
 EU EU Market | US USA Market | BD Made in Bangladesh
 
-Website: https://trace-hub.github.io/trace-hub/
+Website:https://tracehub-org.github.io/trace-hub/
 Contact: TRACE Hub Network - Bangladesh
 
